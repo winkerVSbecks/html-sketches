@@ -1,0 +1,5 @@
+.grid {
+  display: grid;
+  height: 100dvh;
+  grid-template-columns: repeat(var(--columns), 1fr);
+}
