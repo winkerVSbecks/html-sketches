@@ -40,9 +40,6 @@ function vertical(fullWidth?: boolean) {
   let config = randomConfig();
 
   const root = document.createElement('div');
-  // if (fullWidth) {
-  //   root.classList.add('full-width');
-  // }
   root.setAttribute('id', Math.random().toString());
   root.style.setProperty('height', '100%');
   root.style.setProperty('overflow', 'hidden');
@@ -77,27 +74,8 @@ function vertical(fullWidth?: boolean) {
 }
 
 function top() {
-  const wrapper = document.createElement('div');
-  wrapper.style.display = 'grid';
-  wrapper.style.overflow = 'hidden';
-  wrapper.style.height = '100%';
-
-  const newSplit = vertical(true);
-  const toWrap = document.querySelector<HTMLDivElement>('#app > *')!;
-
-  document.querySelector<HTMLDivElement>('#app')!.insertBefore(wrapper, toWrap);
-  wrapper.appendChild(toWrap);
-  wrapper.prepend(newSplit);
-
-  // const originalHTML =
-  //   document.querySelector<HTMLDivElement>('#app')!.innerHTML;
-
-  // wrapper.innerHTML = `<div>${originalHTML}</div>`;
-
-  // wrapper.prepend(newSplit);
-
-  // document.querySelector<HTMLDivElement>('#app')!.innerHTML = '';
-  // document.querySelector<HTMLDivElement>('#app')!.appendChild(wrapper);
+  const root = vertical();
+  document.querySelector<HTMLDivElement>('#app')!.prepend(root);
 }
 
 function right() {
