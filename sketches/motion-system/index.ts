@@ -52,15 +52,9 @@ function sketch() {
 `;
 
   document.querySelectorAll('.column').forEach((el, idx) => {
-    const offset = Math.abs(
-      Math.sin((idx / config.columns) * config.waveLength)
-    );
-    const y = `${offset * 100 + 100}vh`;
-
     animate(
       el,
       {
-        // y: [`${-offset * 100}vh`, `${-offset * 100 + Math.sign(offset) * 100}vh`],
         y: '100vh',
       },
       {

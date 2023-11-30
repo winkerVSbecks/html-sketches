@@ -12,8 +12,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* transform: translateY(calc(var(--offset) + var(--y))); */
-  /* transform: translateY(calc(var(--y))); */
 }
 
 .column-layer {

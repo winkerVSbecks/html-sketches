@@ -1,0 +1,47 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.v-grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+.h-grid {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.column-layer {
+  flex: none;
+  height: 100%;
+  width: 100%;
+  background: var(--gradient);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+.row-layer {
+  flex: none;
+  height: 100%;
+  width: 100%;
+  background: var(--gradient);
+}

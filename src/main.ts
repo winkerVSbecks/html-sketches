@@ -8,6 +8,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <li class="mb2">
           <a class="lh-copy link black hover-light-purple" href="/sketches/motion-system/">Motion System</a>
         </li>
+        <li class="mb2">
+          <a class="lh-copy link black hover-light-purple" href="/sketches/splitters/">Splitters</a>
+        </li>
       </ul>
     </div>
   </div>
