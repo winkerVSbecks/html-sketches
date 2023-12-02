@@ -3,12 +3,13 @@ import 'tachyons';
 const sketches = [
   { name: 'Motion System', path: '/sketches/motion-system/' },
   { name: 'Splitters', path: '/sketches/splitters/' },
+  { name: 'Magnetic', path: '/sketches/magnetic/' },
 ];
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="pa4 mt6 sans-serif">
     <div class="mw6 center">
-      <h1 class="fw6 f6 lh-copy mb2 ma0 ttu tracked mid-gray">Sketches</h1>
+      <h1 class="fw6 f6 lh-copy mb2 ma0 ttu tracked mid-gray ph2">Sketches</h1>
       <ul class="pa0 ma0 bt b--moon-gray">
       ${sketches
         .map(

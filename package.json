@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "canvas-sketch-util": "^1.10.0",
+    "do0dle-colors": "^2.1.1",
     "motion": "^10.16.4",
+    "poline": "^0.7.0",
     "rampensau": "^0.2.0",
     "tachyons": "^4.12.0"
   }
