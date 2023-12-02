@@ -4,6 +4,7 @@ const sketches = [
   { name: 'Motion System', path: '/sketches/motion-system/' },
   { name: 'Splitters', path: '/sketches/splitters/' },
   { name: 'Magnetic', path: '/sketches/magnetic/' },
+  { name: 'Clams', path: '/sketches/clams/' },
 ];
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `

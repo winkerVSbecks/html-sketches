@@ -113,7 +113,6 @@ const stackPair = (
 
 function sketch() {
   const columnCount = Random.rangeFloor(2, 6);
-  const rowCount = Random.rangeFloor(2, 6);
   const circleCount = Random.rangeFloor(8, 16);
 
   const root = document.querySelector<HTMLDivElement>('#app')!;
