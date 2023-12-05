@@ -53,7 +53,8 @@ export function colorScheme(count: number = 3, debug = false) {
   hsluvColors = hsluvColors.filter((c, index) => {
     if (index === 0) return true;
     const ratio = contrastRatio(c.hsluv_l, lightest.hsluv_l);
-    return ratio < 0.222;
+    // return ratio < 0.222;
+    return ratio < 0.2;
   });
 
   const colors = hsluvColors.map((c) => {

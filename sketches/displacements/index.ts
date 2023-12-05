@@ -1,40 +1,15 @@
 import '../../src/shared-style.css';
 import './style.css';
 import Random from 'canvas-sketch-util/random';
-import { generateRandomColorRamp } from 'fettepalette';
 import { gsap } from 'gsap';
 import { Flip } from 'gsap/Flip';
 import { colorScheme } from '../../src/colors/perceptually-uniform';
 
 gsap.registerPlugin(Flip);
 
-// const clrs = generateRandomColorRamp({
-//   total: 4,
-//   centerHue: Random.range(0, 300),
-//   hueCycle: Random.range(0.5, 1), //0.5,
-//   curveMethod: 'lamé',
-//   curveAccent: 0.2,
-//   offsetTint: 0.251,
-//   offsetShade: 0.01,
-//   tintShadeHueShift: 0.0,
-//   offsetCurveModTint: 0.03,
-//   offsetCurveModShade: 0.03,
-//   minSaturationLight: [0, 0],
-//   maxSaturationLight: [1, 1],
-// });
+const { background, foreground } = colorScheme(6, true);
 
-// const hsl = (c) => `hsl(${c[0]}, ${c[1] * 100}%, ${c[2] * 100}%)`;
-
-// const bg = hsl(Random.pick(clrs.light));
-// const colors = clrs.all.map(hsl).filter((c) => c !== bg);
-// const randomColor = () => Random.pick(colors);
-
-const clrs = colorScheme(6);
-const bg = Random.pick(clrs);
-const colors = clrs.filter((c) => c !== bg);
-console.log(colors, bg);
-
-const randomColor = () => Random.pick(colors);
+const randomColor = () => Random.pick(foreground);
 
 const gridStyles = (
   size: string,
@@ -43,12 +18,10 @@ const gridStyles = (
   gap: string
 ) => ({
   display: 'grid',
-  'background-color': bg,
+  'background-color': background,
   'grid-template-columns': `repeat(${columns}, ${size})`,
   'grid-template-rows': `repeat(${rows}, ${size})`,
   'grid-gap': gap,
-  // 'grid-auto-rows': size,
-  // 'grid-auto-columns': size,
   'grid-auto-flow': 'dense',
   height: '100%',
 });
@@ -69,8 +42,8 @@ const gridItem = (x: number, y: number) => {
 
 const generateItems = (count: number, columns: number, rows: number) => {
   return Array.from({ length: count }).map(() => ({
-    x: Random.rangeFloor(1, Math.floor(columns * 0.75)),
-    y: Random.rangeFloor(1, Math.floor(rows * 0.75)),
+    x: Random.rangeFloor(2, Math.floor(columns * 0.75)),
+    y: Random.rangeFloor(2, Math.floor(rows * 0.75)),
   }));
 };
 
@@ -85,7 +58,7 @@ function sketch() {
   css(root, {
     height: `calc(100dvh - ${gap} * 2)`,
     padding: gap,
-    background: bg,
+    background: background,
   });
 
   const grid = document.createElement('div');
@@ -111,12 +84,12 @@ function sketch() {
     });
 
     Flip.from(state, {
-      duration: 1,
+      duration: 0.6,
       ease: 'power1.inOut',
       stagger: 0.1,
       absolute: true,
     });
-  }, 4000);
+  }, 3000);
 }
 
 window.onload = () => {
