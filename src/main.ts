@@ -5,6 +5,11 @@ const sketches = [
   { name: 'Splitters', path: '/sketches/splitters/' },
   { name: 'Magnetic', path: '/sketches/magnetic/' },
   { name: 'Clams', path: '/sketches/clams/' },
+  {
+    name: 'Perceptually Uniform Color Scheme',
+    path: '/sketches/perceptually-uniform-color-scheme/',
+  },
+  { name: 'Displacements', path: '/sketches/displacements/' },
 ];
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `

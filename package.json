@@ -14,7 +14,11 @@
   },
   "dependencies": {
     "canvas-sketch-util": "^1.10.0",
+    "canvas-sketch-util-types": "^0.5.1",
     "do0dle-colors": "^2.1.1",
+    "fettepalette": "^3.1.1",
+    "gsap": "^3.12.3",
+    "hsluv": "^1.0.1",
     "motion": "^10.16.4",
     "poline": "^0.7.0",
     "rampensau": "^0.2.0",

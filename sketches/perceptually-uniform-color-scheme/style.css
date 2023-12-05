@@ -1,0 +1,11 @@
+body {
+  background: #fff;
+}
+
+#app {
+  padding: 1rem;
+}
+
+.palette {
+  gap: 1rem;
+}
