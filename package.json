@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   },
   "dependencies": {
     "canvas-sketch-util": "^1.10.0",
     "canvas-sketch-util-types": "^0.5.1",
+    "chroma-js": "^2.4.2",
+    "culori": "^3.3.0",
     "do0dle-colors": "^2.1.1",
     "fettepalette": "^3.1.1",
     "gsap": "^3.12.3",

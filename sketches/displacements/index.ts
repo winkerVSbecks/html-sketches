@@ -3,7 +3,7 @@ import './style.css';
 import Random from 'canvas-sketch-util/random';
 import { gsap } from 'gsap';
 import { Flip } from 'gsap/Flip';
-import { colorScheme } from '../../src/colors/perceptually-uniform';
+import { colorScheme } from '../../src/colors/full-pipe';
 
 gsap.registerPlugin(Flip);
 

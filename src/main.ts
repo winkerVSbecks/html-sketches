@@ -9,6 +9,7 @@ const sketches = [
     name: 'Perceptually Uniform Color Scheme',
     path: '/sketches/perceptually-uniform-color-scheme/',
   },
+  { name: 'Full Pipe', path: '/sketches/full-pipe/' },
   { name: 'Displacements', path: '/sketches/displacements/' },
 ];
 

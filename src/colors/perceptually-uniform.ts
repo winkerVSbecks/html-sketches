@@ -26,10 +26,10 @@ export function colorScheme(count: number = 3, debug = false) {
   };
 
   // How much should each color change?
-  const change = {
+  const delta = {
     h: Random.rangeFloor(10, 120),
     s: Random.rangeFloor(15, 40),
-    l: Random.rangeFloor(15, 40),
+    l: Random.rangeFloor(15, 80 - start.l), //40),
   };
 
   let hsluvColors = [];
@@ -38,9 +38,9 @@ export function colorScheme(count: number = 3, debug = false) {
   for (let i = 0; i < count; i++) {
     var hsluv = new Hsluv();
 
-    hsluv.hsluv_h = start.h + i * change.h;
-    hsluv.hsluv_s = start.s + i * change.s;
-    hsluv.hsluv_l = start.l + i * change.l;
+    hsluv.hsluv_h = start.h + i * delta.h;
+    hsluv.hsluv_s = start.s; // + i * delta.s;
+    hsluv.hsluv_l = start.l + i * delta.l;
     hsluvColors.push(hsluv);
   }
 
@@ -53,17 +53,23 @@ export function colorScheme(count: number = 3, debug = false) {
   hsluvColors = hsluvColors.filter((c, index) => {
     if (index === 0) return true;
     const ratio = contrastRatio(c.hsluv_l, lightest.hsluv_l);
-    // return ratio < 0.222;
-    return ratio < 0.2;
+    // return ratio < 0.222; // 4.5:1
+    return ratio < 0.2; // 5:1
   });
 
   const colors = hsluvColors.map((c) => {
+    const hsluv = `hslv(${c.hsluv_h}, ${c.hsluv_s}, ${c.hsluv_l}))`;
     c.hsluvToLch();
-    return `lch(${c.lch_l}, ${c.lch_c}, ${c.lch_h})`;
+    return {
+      lch: `lch(${c.lch_l}, ${c.lch_c}, ${c.lch_h})`,
+      hsluv,
+    };
   });
 
-  const background = Random.pick(colors);
-  const foreground = colors.filter((c) => c !== background);
+  const lchClrs = colors.map((c) => c.lch);
+
+  const background = Random.pick(lchClrs);
+  const foreground = lchClrs.filter((c) => c !== background);
 
   if (debug) {
     console.log('background');
